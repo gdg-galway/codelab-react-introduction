@@ -1,12 +1,11 @@
 <h1 align="center">Welcome to codelab-react-introduction 👋</h1>
-<p>
-  <img src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
-  <a href="https://twitter.com/RossanoDan">
-    <img alt="Twitter: RossanoDan" src="https://img.shields.io/twitter/follow/RossanoDan.svg?style=social" target="_blank" />
-  </a>
-</p>
 
 > A simple Single Page Application built with React at the GDG Galway React Codelab.
+
+## Clone
+```sh
+git clone https://github.com/gdg-galway/codelab-react-introduction.git
+```
 
 ## Install
 
@@ -43,6 +42,12 @@ npm run build
 
 Give a ⭐️ if this project helped you!
 
----
+## That's it, for now!
 
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
+I hope you have enjoyed this codelab and I invite you to check our other tuts on https://github.com/gdg-galway.
+
+You can also join our community and find us on the following platforms:
+- Twitter: https://twitter.com/GDGgalway
+- Meetup: https://www.meetup.com/Google-Developers-Group-in-Galway-Meetup/
+- Discord: https://discord.gg/JWNVT4W
+- Discourse: https://forum.gdg-galway.com
