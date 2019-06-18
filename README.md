@@ -1,6 +1,13 @@
-<h1 align="center">Welcome to codelab-react-introduction 👋</h1>
+<h1 align="center">Welcome to React Codelab 👋</h1>
 
-> A simple Single Page Application built with React at the GDG Galway React Codelab.
+Through this codelab we will develop a simple web application based on React, learning the `basic concepts` of this library and some `ES6 features`.
+
+Topics we will focus on:
+* React, a new way to build user interfaces
+* Think in React
+* React.Component
+* How to render a Component
+* `state` and `props`
 
 ## Clone
 ```sh
