@@ -40,10 +40,6 @@ npm run build
 
 ## Show your support
 
-Give a ⭐️ if this project helped you!
-
-## That's it, for now!
-
 I hope you have enjoyed this codelab and I invite you to check our other tuts on https://github.com/gdg-galway.
 
 You can also join our community and find us on the following platforms:
@@ -51,3 +47,5 @@ You can also join our community and find us on the following platforms:
 - Meetup: https://www.meetup.com/Google-Developers-Group-in-Galway-Meetup/
 - Discord: https://discord.gg/JWNVT4W
 - Discourse: https://forum.gdg-galway.com
+
+Give a ⭐️ if this project helped you!
