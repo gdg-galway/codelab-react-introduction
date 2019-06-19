@@ -5,6 +5,7 @@ Through this codelab we will develop a simple web application based on React, le
 Topics we will focus on:
 * React, a new way to build user interfaces
 * Think in React
+* Different ways to scaffold a project: in particular `create-react-app` tool
 * React.Component
 * How to render a Component
 * `state` and `props`
