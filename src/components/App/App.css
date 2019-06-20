@@ -1,0 +1,89 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.Header {
+  border-bottom: 1px black solid;
+  padding: 10px 10px;
+}
+
+.Container {
+  padding: 10px 50px;
+}
+
+.Container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.Container ul li {
+  border: 1px black solid;
+  margin-bottom: 5px;
+  padding: 15px;
+}
+
+.Completed {
+  color: green;
+}
+
+.Todo {
+  color: red;
+}
+
+.Toggle,
+.Delete {
+  float: right;
+}
+
+.Input-Item {
+  box-sizing: border-box;
+  display: block;
+  height: 30px;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.Button-Item {
+  display: block;
+  height: 30px;
+  width: 100%;
+}
+
+.Footer {
+  border-top: 1px black solid;
+  padding: 10px 10px;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+}
