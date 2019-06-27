@@ -148,7 +148,7 @@ If you want to learn more about this topic, [take a look to the official documen
 
 ## Restyling
 Let's add some make-up. Open `App.css` and overwrite with the following
-```css
+```
 .App {
   text-align: center;
 }
@@ -219,7 +219,7 @@ We'd like to know when a to-do is completed or not without inspecting the webpag
 > Use ( ... jsx code ... ) whe you have to split into multiple lines. Readability 
 
 Paste this CSS into `App.css` (we take care about style here...)
-```css
+```
 .Completed {
   color: green;
 }
