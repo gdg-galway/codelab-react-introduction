@@ -139,12 +139,98 @@ Now let's say that we have a method to delete the second item of that list. But 
 The answer is **using a unique property** called `key`.
 ```javascript
 <div className="Container">
-  {this.state.todos.map(todo => <p key={todo.is}>{todo.description}</p>)}
+  {this.state.todos.map(todo => <p key={todo.id}>{todo.description}</p>)}
 </div>
 ```
 And this is the reason why I used `Date.now()`, `Date.now() + 1`, `Date.now() + 2` and `Date.now() + 3` as to-do identifiers. We need **unique** values.
 
 If you want to learn more about this topic, [take a look to the official documentation](https://reactjs.org/docs/reconciliation.html).
+
+## Restyling
+Let's add some make-up. Open `App.css` and overwrite with the following
+```css
+.App {
+  text-align: center;
+}
+
+.Header {
+  border-bottom: 1px black solid;
+  padding: 10px 10px;
+}
+
+.Container {
+  padding: 10px 50px;
+}
+
+.Container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.Container ul li {
+  border: 1px black solid;
+  margin-bottom: 5px;
+  padding: 15px;
+}
+
+.Footer {
+  border-top: 1px black solid;
+  padding: 10px 10px;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+}
+
+```
+Now we can replace the `<p>` list with a real list, using the unordered list element.
+```javascript
+<div className="Container">
+  <ul>
+    {this.state.todos.map(todo => (
+      <li key={todo.id}>
+        {todo.description}
+      </li>
+    ))}
+  </ul>
+</div>
+```
+
+## Conditional rendering
+React makes quite easy performing conditional rendering: the most common "trick" is the `ternary operator`.
+```
+{ condition ? if true : if false }
+```
+We'd like to know when a to-do is completed or not without inspecting the webpage searching manually for the state :joy:
+```javascript
+<ul>
+  {this.state.todos.map(todo => (
+    <li key={todo.id}>
+      {todo.description}
+      {todo.completed ? (
+        <small className="Completed">Completed</small>
+      ) : (
+        <small className="Todo">Todo</small>
+      )}
+    </li>
+  ))}
+</ul>
+```
+> Use ( ... jsx code ... ) whe you have to split into multiple lines. Readability 
+
+Paste this CSS into `App.css` (we take care about style here...)
+```css
+.Completed {
+  color: green;
+}
+
+.Todo {
+  color: red;
+}
+```
+Great! So now, according to the initial state we defined before, you should see two completed (and <span style="color: green;">green flagged</span>) to-dos and 2 not completed (and <span style="color: red;">red flagged</span>) to-dos.
+
+You're rocking. Let's go ahead.
 
 ## Author
 

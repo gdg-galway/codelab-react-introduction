@@ -88,7 +88,7 @@ class App extends React.Component {
           <ul>
             {this.state.todos.map(todo => (
               <li key={todo.id}>
-                {todo.description}{" "}
+                {todo.description}
                 {todo.completed ? (
                   <small className="Completed">Completed</small>
                 ) : (
@@ -119,10 +119,10 @@ class App extends React.Component {
         </div>
         <div className="Footer">
           <code>
-            with{" "}
+            with
             <span role="img" aria-labelledby="love">
               ❤️
-            </span>{" "}
+            </span>
             by codelab-react-introduction
           </code>
         </div>
