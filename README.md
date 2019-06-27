@@ -124,7 +124,7 @@ Mmmh..
 
 ![What?](https://media.giphy.com/media/xYHscQ1Np55i8/giphy.gif)
 
-Don't worry, the fix is very straightforward. Do you about the **virtual DOM**? React renders things in a very smart way: it creates a copy of the real browser DOM - the virtual DOM - and every time your application changes (let's say) it *finds differences* between the virtual and the real DOM and updates ONLY the part is changed.
+Don't worry, the fix is very straightforward. Do you about the **virtual DOM**? React renders things in a very smart way: it creates a copy of the real browser DOM - the virtual DOM - and every time your application changes (let's say) it *finds differences* between the virtual and the real DOM and updates **ONLY** the part is changed.
 
 But it had some "limitations": this mechanism didn't work well for lists of similar elements. Imagine you have this
 ```
@@ -135,6 +135,16 @@ But it had some "limitations": this mechanism didn't work well for lists of simi
 </ul>
 ```
 Now let's say that we have a method to delete the second item of that list. But how can React know which element to delete?
+
+The answer is **using a unique property** called `key`.
+```javascript
+<div className="Container">
+  {this.state.todos.map(todo => <p key={todo.is}>{todo.description}</p>)}
+</div>
+```
+And this is the reason why I used `Date.now()`, `Date.now() + 1`, `Date.now() + 2` and `Date.now() + 3` as to-do identifiers. We need **unique** values.
+
+If you want to learn more about this topic, [take a look to the official documentation](https://reactjs.org/docs/reconciliation.html).
 
 ## Author
 
