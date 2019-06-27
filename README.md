@@ -1,43 +1,129 @@
-<h1 align="center">Welcome to React Codelab 👋</h1>
+<h1>Welcome to React Codelab 👋</h1>
 
-Through this codelab we will develop a simple web application based on React, learning the `basic concepts` of this library and some `ES6 features`.
+Through this codelab we will develop a simple to-do application with React, learning the `basic concepts` of this library and some `ES6 features`.
 
-Topics we will focus on:
-* React, a new way to build user interfaces
-* Think in React
-* Different ways to scaffold a project: in particular `create-react-app` tool
-* React.Component
-* How to render a Component
-* `state` and `props`
-
-## Clone
-```sh
-git clone https://github.com/gdg-galway/codelab-react-introduction.git
+## Initial setup
+First of all, make sure you have **NodeJS** and **npm** installed on your machine.
+Open your terminal and run `node --version` and `npm --version`: if everything is ok, you should see something like this
+```bash
+rossanos-mbp-2:codelab-react-introduction rossanodangelo$ node --version
+v11.14.0
+rossanos-mbp-2:codelab-react-introduction rossanodangelo$ npm --version
+6.9.0
 ```
-
-## Install
-
-```sh
-npm install
+To easily scaffold the project I'm going to use `create-react-app`, a tool provided by Facebook.
+```bash
+npx create-react-app codelab-react-introduction
+cd codelab-react-introduction
+npm start
 ```
+The `npm start` command will run your starter project to `http://localhost:3000/`.
 
-## Run
-
-```sh
-npm run start
+## What's inside the box
+Using your favourite text editor (I recommend **Visual Studio Code**), open the project to see the default structure:
 ```
-
-## Run tests
-
-```sh
-npm run test
+./node_modules
+./public
+./src
+App.js
+App.test.js
+App.css
+.gitignore
+package-lock.json
+package.json
+README.md
 ```
+In this codelab we're going to work into the `./src` folder mainly but
+if you want to learn more about it, [this is a good starting point](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app).
 
-## Build
+## Create your first component
+Open `App.js` and overwrite the existing code with the following
+```javascript
+import React from "react";
+import "./App.css";
 
-```sh
-npm run build
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+  render() {
+    return (
+      <div className="App">
+        <div className="Header">
+          <h1>
+            Hello, user!
+          </h1>
+        </div>
+        <div className="Container">
+          <p>To-do list here.</p>
+        </div>
+        <div className="Footer">
+          <code>
+            with
+            <span role="img" aria-labelledby="love">
+              ❤️
+            </span>
+            by codelab-react-introduction
+          </code>
+        </div>
+      </div>
+    );
+  }
+}
+
+export default App;
 ```
+Once refreshed you should display a very basic page with three sections: the `Header`, the `Container` and the `Footer`. **For now** let's go easy and leave them in the `App component`.
+
+## The state
+As I said, the `state` is a JavaScript object that defines how a component behaves. In this case we have to do with a to-do app so the state contains... :scream_cat: to-dos!
+
+Change `this.state` into the following object
+```javascript
+this.state = {
+  todos: [
+    {
+      id: Date.now(),
+      description: "Learn about React",
+      completed: false
+    },
+    {
+      id: Date.now() + 1,
+      description: "Listen some music",
+      completed: true
+    },
+    {
+      id: Date.now() + 2,
+      description: "Debug the code",
+      completed: false
+    },
+    {
+      id: Date.now() + 3,
+      description: "Dream",
+      completed: true
+    }
+  ]
+};
+```
+At this point we are ready to display our fake to-dos. Find the `render()` method and copy-paste this new `div` leaving unchanged the other `div`s
+```javascript
+<div className="Container">
+  {this.state.todos.map(todo => <p>{todo.description}</p>)}
+</div>
+```
+Now you should see a list of `<p>` elements but there's a problem.. Open the browser console and you'll see the warning message
+```
+Warning: Each child in a list should have a unique "key" prop.
+
+Check the render method of `App`. See https://fb.me/react-warning-keys for more information.
+    in p (at App.js:80)
+    in App (at src/index.js:7)
+```
+Mmmh..
+<div style="width:100%;height:0;padding-bottom:62%;position:relative;">
+<iframe src="https://giphy.com/embed/zLXBAnyOqmTHa" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+</div>
 
 ## Author
 
