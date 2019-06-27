@@ -334,7 +334,17 @@ Now we can use this `Counter` component in our `App.js`
 ```
 As you can see, the `Counter` components helps us to keep track of how many to-dos items we have in that list. Useful, isn't?
 
-This component updates (and re-render) every time `props` changes. Read about [components lifecycle methods](https://reactjs.org/docs/react-component.html) to dig into it.
+This component updates (and re-render) every time `props` change. Read about [components lifecycle methods](https://reactjs.org/docs/react-component.html) to dig into it.
+
+## Conclusion
+There are two additional functionalities: `delete a todo` and `add a new todo`. Feel free to implement them by yourself and then compare our solutions.
+
+If you have questions, ping me through the [forum](https://forum.gdg-galway.com/) or create an issue [here](https://github.com/gdg-galway/codelab-react-introduction/issues).
+
+## Demo
+https://6otnr.codesandbox.io/
+
+![Demo](./demo.png)
 
 ## Must read
 React components lifecycle methods: https://reactjs.org/docs/react-component.html, http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/

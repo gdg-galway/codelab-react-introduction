@@ -123,7 +123,7 @@ class App extends React.Component {
             <span role="img" aria-labelledby="love">
               ❤️
             </span>
-            by codelab-react-introduction
+            by GDG Galway
           </code>
         </div>
       </div>
