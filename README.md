@@ -38,7 +38,7 @@ if you want to learn more about it, [this is a good starting point](https://reac
 
 ## Create your first component
 Open `App.js` and overwrite the existing code with the following
-```javascript
+```
 import React from "react";
 import "./App.css";
 
@@ -80,7 +80,7 @@ Once refreshed you should display a very basic page with three sections: the `He
 As I said, the `state` is a JavaScript object that defines how a component behaves. In this case we have to do with a to-do app so the state contains... :scream_cat: to-dos!
 
 Change `this.state` into the following object
-```javascript
+```
 this.state = {
   todos: [
     {
@@ -107,7 +107,7 @@ this.state = {
 };
 ```
 At this point we are ready to display our fake to-dos. Find the `render()` method and copy-paste this new `div` leaving unchanged the other `div`s
-```javascript
+```
 <div className="Container">
   {this.state.todos.map(todo => <p>{todo.description}</p>)}
 </div>
@@ -137,7 +137,7 @@ But it had some "limitations": this mechanism didn't work well for lists of simi
 Now let's say that we have a method to delete the second item of that list. But how can React know which element to delete?
 
 The answer is **using a unique property** called `key`.
-```javascript
+```
 <div className="Container">
   {this.state.todos.map(todo => <p key={todo.id}>{todo.description}</p>)}
 </div>
@@ -184,7 +184,7 @@ Let's add some make-up. Open `App.css` and overwrite with the following
 
 ```
 Now we can replace the `<p>` list with a real list, using the unordered list element.
-```javascript
+```
 <div className="Container">
   <ul>
     {this.state.todos.map(todo => (
@@ -202,7 +202,7 @@ React makes quite easy performing conditional rendering: the most common "trick"
 { condition ? if true : if false }
 ```
 We'd like to know when a to-do is completed or not without inspecting the webpage searching manually for the state :joy:
-```javascript
+```
 <ul>
   {this.state.todos.map(todo => (
     <li key={todo.id}>
