@@ -251,6 +251,10 @@ As it'd great to see the status of each to-do, it'd great to change their status
   ))}
 </ul>
 ```
+> Note how I'm using ( ) => this.handleToggle( ... )
+> It does not mean that I'm executing the method when the click is performed.
+> Use this pattern when you need to pass values as parameters for your handlers.
+
 The related CSS
 ```
 .Toggle  {
