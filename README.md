@@ -77,7 +77,7 @@ export default App;
 Once refreshed you should display a very basic page with three sections: the `Header`, the `Container` and the `Footer`. **For now** let's go easy and leave them in the `App component`.
 
 ## The state
-As I said, the `state` is a JavaScript object that defines how a component behaves. In this case we have to do with a to-do app so the state contains... :scream_cat: to-dos!
+The `state` is a JavaScript object that defines how a component behaves. In this case we have to do with a to-do app so the application state contains... :scream_cat: to-dos!
 
 Change `this.state` into the following object
 ```
@@ -228,9 +228,112 @@ Paste this CSS into `App.css` (we take care about style here...)
   color: red;
 }
 ```
-Great! So now, according to the initial state we defined before, you should see two completed (and <span style="color: green;">green flagged</span>) to-dos and 2 not completed (and <span style="color: red;">red flagged</span>) to-dos.
+Great! So now, according to the initial state we defined before, you should see two completed (and green flagged) to-dos and 2 not completed (and red flagged) to-dos.
 
 You're rocking. Let's go ahead.
+
+## Updating the state
+As it'd great to see the status of each to-do, it'd great to change their status from the UI. We can quckly implement a `toggle` functionality, to change the status of a single to-do.
+```
+<ul>
+  {this.state.todos.map(todo => (
+    <li key={todo.id}>
+      {todo.description}
+      {todo.completed ? (
+        <small className="Completed">Completed</small>
+      ) : (
+        <small className="Todo">Todo</small>
+      )}
+      <button className="Toggle" onClick={() => this.handleToggle(todo.id)}>
+        Toggle
+      </button>
+    </li>
+  ))}
+</ul>
+```
+The related CSS
+```
+.Toggle  {
+  float: right;
+}
+```
+That button, once clicked, will execute a method called `handleToggle`.
+```
+handleToggle = id => {
+  const oldTodos = [...this.state.todos];
+  const todos = oldTodos.map(todo => {
+    if (todo.id === id) {
+      todo.completed = !todo.completed;
+    }
+    return todo;
+  });
+  this.setState({
+    todos
+  });
+};
+```
+This method expects an `id` as parameter and uses it to retrieve the single to-do we want to toggle. Its focal part though is
+```
+this.setState({
+  todos
+});
+```
+Here we are updating the application state in a **immutable way**. It's a common and well known best practice: when you're updating the application state (with React and/or with Redux) do it with immutability in mind.
+
+This is a [good article](https://medium.com/tribalscale/understanding-immutability-fdd627b66e58) about this topic.
+
+Now, if you try to toggle your to-dos, you should see some magic in action.
+
+If you're in stuck with it, stop for a moment. Think about what we're doing and debug your application with [React DevTools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) to see what's happening internally!
+
+## Add the Counter component
+Until now we never talked about `props` in details. We'll meet `props` working with a second component.
+
+Create a new JavaScript file, `Counter.js` and paste this code into it
+```
+import React from "react";
+
+const counter = props => (
+  <div>
+    <p>Total: {props.total}</p>
+  </div>
+);
+
+export default counter;
+```
+This is a `stateless` component. Very easy, means that it doesn't manage the application state. I recommend to use `stateless` components as much as you can for two reasons:
+
+* they make easier to build maintainable applications
+* they are highly reusable
+* they let you to manage the application state in few selected components
+
+Now we can use this `Counter` component in our `App.js`
+```
+<div className="Container">
+  <ul>
+    {this.state.todos.map(todo => (
+      <li key={todo.id}>
+        {todo.description}
+        {todo.completed ? (
+          <small className="Completed">Completed</small>
+        ) : (
+          <small className="Todo">Todo</small>
+        )}
+        <button className="Toggle" onClick={() => this.handleToggle(todo.id)}>
+          Toggle
+        </button>
+      </li>
+    ))}
+  </ul>
+  <Counter total={this.state.todos.length} />
+</div>
+```
+As you can see, the `Counter` components helps us to keep track of how many to-dos items we have in that list. Useful, isn't?
+
+This component updates (and re-render) every time `props` changes. Read about [components lifecycle methods](https://reactjs.org/docs/react-component.html) to dig into it.
+
+## Must read
+React components lifecycle methods: https://reactjs.org/docs/react-component.html, http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 
 ## Author
 
