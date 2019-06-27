@@ -363,6 +363,7 @@ I hope you have enjoyed this codelab and I invite you to check our other tuts on
 You can also join our community and find us on the following platforms:
 - Twitter: https://twitter.com/GDGgalway
 - Meetup: https://www.meetup.com/Google-Developers-Group-in-Galway-Meetup/
+- Facebook https://www.facebook.com/GDGgalway/
 - Discord: https://discord.gg/JWNVT4W
 - Discourse: https://forum.gdg-galway.com
 
