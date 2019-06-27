@@ -121,9 +121,20 @@ Check the render method of `App`. See https://fb.me/react-warning-keys for more 
     in App (at src/index.js:7)
 ```
 Mmmh..
-<div style="width:100%;height:0;padding-bottom:62%;position:relative;">
-<iframe src="https://giphy.com/embed/zLXBAnyOqmTHa" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-</div>
+
+![What?](https://media.giphy.com/media/xYHscQ1Np55i8/giphy.gif)
+
+Don't worry, the fix is very straightforward. Do you about the **virtual DOM**? React renders things in a very smart way: it creates a copy of the real browser DOM - the virtual DOM - and every time your application changes (let's say) it *finds differences* between the virtual and the real DOM and updates ONLY the part is changed.
+
+But it had some "limitations": this mechanism didn't work well for lists of similar elements. Imagine you have this
+```
+<ul>
+  <li>...</li>
+  <li>...</li>
+  <li>...</li>
+</ul>
+```
+Now let's say that we have a method to delete the second item of that list. But how can React know which element to delete?
 
 ## Author
 
