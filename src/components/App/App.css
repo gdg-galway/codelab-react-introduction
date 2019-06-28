@@ -9,6 +9,7 @@
 
 .Container {
   padding: 10px 50px;
+  margin-bottom: 45px;
 }
 
 .Container ul {
@@ -50,6 +51,7 @@
 }
 
 .Footer {
+  background-color: white;
   border-top: 1px black solid;
   padding: 10px 10px;
   position: fixed;

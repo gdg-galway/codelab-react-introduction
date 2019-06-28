@@ -10,14 +10,14 @@ const initialState = {
     email: "rossano.dangelo@yahoo.com"
   },
   todos: [
-    { id: Date.now(), description: "Learn about React", completed: false },
+    { id: Date.now(), description: "In case of fire", completed: false },
     {
       id: Date.now() + 1,
-      description: "Listen some music",
+      description: "git commit",
       completed: true
     },
-    { id: Date.now() + 2, description: "Debug the code", completed: false },
-    { id: Date.now() + 3, description: "Dream", completed: true }
+    { id: Date.now() + 2, description: "git push", completed: false },
+    { id: Date.now() + 3, description: "Leave the building", completed: true }
   ]
 };
 
