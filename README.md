@@ -344,8 +344,6 @@ If you have questions, ping me through the [forum](https://forum.gdg-galway.com/
 ## Demo
 https://6otnr.codesandbox.io/
 
-![Demo](./demo.png)
-
 ## Must read
 React components lifecycle methods: https://reactjs.org/docs/react-component.html, http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 
